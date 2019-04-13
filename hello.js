@@ -1,7 +1,6 @@
-// const express = require('express')
 import express from 'express'
-// const bodyParser = require('body-parser')
 import bodyParser from 'body-parser'
+import mongodb from 'mongodb'
 
 const app = express()
 const port = 3000
@@ -21,4 +20,5 @@ app.listen(port, () => {
   console.log(`Events API server is listening on port ${port}`)
 })
 
-
+const MongoClient = mongodb.MongoClient
+let client
