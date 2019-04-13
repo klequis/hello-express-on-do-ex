@@ -6,8 +6,9 @@
   "scripts": {
     "copy": "cp package.json dist/ && cp README.md dist/",
     "build": "babel hello.js -d dist && npm run copy",
-
-    "start": "npm run build && nodemon dist/hello.js"
+    "start": "npm run build && nodemon dist/hello.js",
+    "babel-node": "@babel-node --presets=/*a*/ --ignore='foo|bar|baz'",
+    "start-local": "nodemon --exec npm run babel-node -- hello.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "mongodb": "^3.2.3",
     "morgan": "^1.9.1"
   },
   "devDependencies": {

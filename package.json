@@ -6,7 +6,8 @@
   "scripts": {
     "copy": "cp package.json dist/ && cp README.md dist/",
     "build": "babel hello.js -d dist && npm run copy",
-    "start": "npm run build && nodemon dist/hello.js"
+    "start": "npm run build && nodemon dist/hello.js",
+    "start-local": "nodemon --exec babel-node hello.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
     "nodemon": "^1.18.11"
   }
