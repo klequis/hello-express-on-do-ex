@@ -1,6 +1,6 @@
 import { dbName, mongoUrl } from './config'
 import { removeIdProp, getObjectId } from './helpers'
-import { redf } from '../logger'
+import { redf, yellowf, greenf } from '../logger'
 
 import mongodb from 'mongodb'
 const MongoClient = mongodb.MongoClient
@@ -13,7 +13,9 @@ export async function close() {
 }
 
 async function connectDB() {
-  if (!client) client = await MongoClient.connect(mongoUrl)
+  if (!client) {
+    client = await MongoClient.connect(mongoUrl, { useNewUrlParser: true })
+  }
   return {
       db: client.db(dbName),
       client: client
@@ -136,33 +138,18 @@ export const insertMany = async (collection, data) => {
 
 
 // MongoDB test
-/*
-const MongoClient = mongodb.MongoClient
-
-const mongoUrl = 'mongodb+srv://todo-db-admin:D92dARWONO0t16uF@todo-cluster0-ilc7v.mongodb.net/test?retryWrites=true'
-const dbName = 'todo-dev'
-let client
-
-async function connectDB() {
-  if (!client) {
-    client = await MongoClient.connect(mongoUrl)
-  }
-  return {
-      db: client.db(dbName),
-      client: client
-  }
-}
-
 async function testConnection() {
+  yellowf('MongoDB connection test...')
   try {
     const { db, client } = await connectDB()
     const ret = await db.collection('todos').find({}).toArray()
-    console.log('SUCCESS', ret)
+    // console.log('SUCCESS', ret.length)
+    greenf('MongoDB connection test:', 'success')
   }
   catch (e) {
+    redf('MongoDB connection test', 'failure')
     console.log('ERROR: dbFunctions.find', e.message)
   }
 }
 
 testConnection()
-*/
