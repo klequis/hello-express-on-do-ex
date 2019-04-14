@@ -1,21 +1,28 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import mongodb from 'mongodb'
+import cors from 'cors'
+import morgan from 'morgan'
+import todo from '../routes/todo-route'
+import { redf } from '../logger'
+
+require('dotenv').config()
 
 const app = express()
-const port = 3000
+const port = process.env.PORT
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(morgan('dev'))
 
-app.get('/', (req, res) => {
-  res.send('also try /test')
-})
-
-app.get('/test', (req, res) => {
-  res.send('test works')
+app.use('/api/todo', todo)
+app.get('/api', (req, res) => {
+  redf('Invalid endpoint!')
+  res.send('Invalid endpoint!')
 })
 
 app.listen(port, () => {
   console.log(`Events API server is listening on port ${port}`)
 })
+
+export default app
