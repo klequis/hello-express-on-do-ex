@@ -2,13 +2,13 @@
   "name": "hello",
   "version": "1.0.0",
   "description": "",
-  "main": "hello.js",
+  "main": "server/index.js",
   "scripts": {
     "copy": "cp package.json dist/ && cp README.md dist/",
     "install-prod": "npm i --production",
-    "build": "babel hello.js -d dist && npm run-script copy && npm run-script install-prod",
-    "start": "node hello.js",
-    "start-local": "nodemon --exec babel-node hello.js"
+    "build": "babel server/index.js -d dist && npm run-script copy && npm run-script install-prod",
+    "start": "node server/index.js",
+    "start-local": "nodemon --exec babel-node server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.3",
     "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
