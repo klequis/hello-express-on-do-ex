@@ -4,9 +4,12 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
+    "clean-dist": "rimraf dist",
+    "transcompile": "babel . -d dist --ignore node_modules",
     "copy": "cp package.json dist/ && cp README.md dist/",
     "install-prod": "npm i --production",
-    "build": "babel server/index.js -d dist && npm run-script copy && npm run-script install-prod",
+    "build-0": "babel server/index.js -d dist && npm run-script copy && npm run-script install-prod",
+    "build": "npm run-script clean-dist && npm run-script transcompile && npm run-script copy && npm run-script install-prod",
     "start": "NODE_ENV=production node server/index.js",
     "start-dev-local": "NODE_ENV=devLocal nodemon --exec babel-node server/index.js",
     "start-test-local": "NODE_ENV=testLocal nodemon --exec babel-node server/index.js"
@@ -32,6 +35,7 @@
     "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "cross-env": "^5.2.0",
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.18.11",
+    "rimraf": "^2.6.3"
   }
 }
