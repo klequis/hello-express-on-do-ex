@@ -1,11 +1,14 @@
+const result = dotenv.config()
+
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import morgan from 'morgan'
 import todo from '../routes/todo-route'
 import { redf, yellow } from '../logger'
+import dotenv from 'dotenv'
 
-const result = require('dotenv').config()
+
 yellow('result', result)
 // import 'dotenv/config'
 // console.log('** 1-env', process.env)

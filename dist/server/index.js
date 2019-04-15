@@ -19,7 +19,9 @@ var _todoRoute = _interopRequireDefault(require("../routes/todo-route"));
 
 var _logger = require("../logger");
 
-var result = require('dotenv').config();
+var _dotenv = _interopRequireDefault(require("dotenv"));
+
+var result = _dotenv["default"].config();
 
 (0, _logger.yellow)('result', result); // import 'dotenv/config'
 // console.log('** 1-env', process.env)
