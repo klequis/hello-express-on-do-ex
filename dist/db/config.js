@@ -59,33 +59,39 @@ var _mongoUrl = '';
 var setVars = function () {
   switch (NODE_ENV) {
     case 'devLocal':
+      console.log('setVars case: devLocal');
       _dbName = DB_NAME_DEV_LOCAL;
       _mongoUrl = MONGODB_URL_DEV_LOCAL;
       break;
 
     case 'devRemote':
+      console.log('setVars case: devRemote');
       _dbName = DB_NAME_DEV_REMOTE;
       _mongoUrl = MONGODB_URL_DEV_REMOTE;
       break;
 
     case 'testLocal':
+      console.log('setVars case: testLocal');
       _dbName = DB_NAME_TEST_LOCAL;
       _mongoUrl = MONGODB_URL_TEST_LOCAL;
       break;
 
     case 'testRemote':
+      console.log('setVars case: testRemote');
       _dbName = DB_NAME_TEST_REMOTE;
       _mongoUrl = MONGODB_URL_TEST_REMOTE;
       break;
 
     case 'production':
+      console.log('setVars case: production');
       _dbName = DB_NAME_PRODUCTION;
       _mongoUrl = MONGODB_URL_PRODUCTION;
       break;
 
     default:
-      _dbName = DB_NAME_DEV_LOCAL;
-      _mongoUrl = MONGODB_URL_DEV_LOCAL;
+      console.log('setVars case: DEFAULT devRemote');
+      _dbName = DB_NAME_DEV_REMOTE;
+      _mongoUrl = MONGODB_URL_DEV_REMOTE;
   }
 }();
 

@@ -5,13 +5,12 @@ import morgan from 'morgan'
 import todo from '../routes/todo-route'
 import { redf, yellow } from '../logger'
 
-require('dotenv').config()
+const result = require('dotenv').config()
+yellow('result', result)
 // import 'dotenv/config'
 // console.log('** 1-env', process.env)
 
 const app = express()
-const port = process.env.PORT
-// yellow('port', port)
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -23,6 +22,11 @@ app.get('/api', (req, res) => {
   redf('Invalid endpoint!')
   res.send('Invalid endpoint!')
 })
+
+const port = result.parsed.PORT
+
+// const port = 3030
+yellow('server/index.js: port', result.parsed.PORT)
 
 app.listen(port, () => {
   console.log(`Events API server is listening on port ${port}`)

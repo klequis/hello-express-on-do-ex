@@ -6,7 +6,7 @@
   "scripts": {
     "clean-dist": "rimraf dist",
     "transcompile": "babel . -d dist --ignore node_modules",
-    "copy": "cp package.json dist/ && cp README.md dist/",
+    "copy": "cp package.json dist/ && cp README.md dist/ && cp ecosystem.config.js dist/",
     "install-prod": "npm i --production",
     "build-0": "babel server/index.js -d dist && npm run-script copy && npm run-script install-prod",
     "build": "npm run-script clean-dist && npm run-script transcompile && npm run-script copy && npm run-script install-prod",

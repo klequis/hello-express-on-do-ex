@@ -91,9 +91,9 @@ export const setVars = (() => {
       _mongoUrl = MONGODB_URL_PRODUCTION
       break;
     default:
-    console.log('setVars case: DEFAULT devLocal')
-      _dbName = DB_NAME_DEV_LOCAL
-      _mongoUrl = MONGODB_URL_DEV_LOCAL
+    console.log('setVars case: DEFAULT devRemote')
+      _dbName = DB_NAME_DEV_REMOTE
+      _mongoUrl = MONGODB_URL_DEV_REMOTE
   }
 
 
