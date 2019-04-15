@@ -3,12 +3,15 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import morgan from 'morgan'
 import todo from '../routes/todo-route'
-import { redf } from '../logger'
+import { redf, yellow } from '../logger'
 
 require('dotenv').config()
+// import 'dotenv/config'
+// console.log('** 1-env', process.env)
 
 const app = express()
 const port = process.env.PORT
+// yellow('port', port)
 
 app.use(cors())
 app.use(bodyParser.json())
