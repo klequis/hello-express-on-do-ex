@@ -1,8 +1,4 @@
 import { red, yellow, redf, greenf } from '../logger'
-// require('dotenv').load()
-
-// const nodeEnv = process.env.NODE_ENV || ''
-// greenf('NODE_ENV', nodeEnv)
 
 require('dotenv').config()
 
