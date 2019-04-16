@@ -2,6 +2,5 @@
   "presets": ["@babel/preset-env"],
   "plugins": [
     "@babel/plugin-transform-runtime",
-    "transform-inline-environment-variables"
   ]
 }

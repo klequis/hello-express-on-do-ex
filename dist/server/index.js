@@ -7,6 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _envVars = require("../env/env-vars");
+
 var _express = _interopRequireDefault(require("express"));
 
 var _bodyParser = _interopRequireDefault(require("body-parser"));
@@ -18,13 +20,6 @@ var _morgan = _interopRequireDefault(require("morgan"));
 var _todoRoute = _interopRequireDefault(require("../routes/todo-route"));
 
 var _logger = require("../logger");
-
-var _dotenv = _interopRequireDefault(require("dotenv"));
-
-var result = _dotenv["default"].config();
-
-(0, _logger.yellow)('result', result); // import 'dotenv/config'
-// console.log('** 1-env', process.env)
 
 var app = (0, _express["default"])();
 app.use((0, _cors["default"])());
@@ -38,9 +33,8 @@ app.get('/api', function (req, res) {
   (0, _logger.redf)('Invalid endpoint!');
   res.send('Invalid endpoint!');
 });
-var port = result.parsed.PORT; // const port = 3030
-
-(0, _logger.yellow)('server/index.js: port', result.parsed.PORT);
+var port = process.env.PORT;
+(0, _logger.yellow)('server/index.js: port', port);
 app.listen(port, function () {
   console.log("Events API server is listening on port ".concat(port));
 });

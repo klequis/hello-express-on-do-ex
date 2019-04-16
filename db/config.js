@@ -1,7 +1,5 @@
 import { red, yellow, redf, greenf } from '../logger'
 
-require('dotenv').config()
-
 const {
   // devLocal
   MONGODB_URL_DEV_LOCAL,
@@ -26,23 +24,23 @@ const {
 
 greenf('NODE_ENV', NODE_ENV)
 
-// // devLocal
-// yellow('MONGODB_URL_DEV_LOCAL', MONGODB_URL_DEV_LOCAL,)
-// yellow('DB_NAME_DEV_LOCAL', DB_NAME_DEV_LOCAL)
-// // devRemote
-// yellow('MONGODB_URL_DEV_REMOTE', MONGODB_URL_DEV_REMOTE)
-// yellow('DB_NAME_DEV_REMOTE', DB_NAME_TEST_REMOTE)
-// // testLocal
-// yellow('MONGODB_URL_TEST_LOCAL', MONGODB_URL_TEST_LOCAL)
-// yellow('DB_NAME_TEST_LOCAL', DB_NAME_TEST_LOCAL)
-// // testLocal
-// yellow('MONGODB_URL_TEST_REMOTE', MONGODB_URL_TEST_REMOTE)
-// yellow('DB_NAME_TEST_REMOTE', DB_NAME_TEST_REMOTE)
-// // production
-// yellow('MONGODB_URL_PRODUCTION', MONGODB_URL_PRODUCTION)
-// yellow('DB_NAME_PRODUCTION', DB_NAME_PRODUCTION)
-// // environment
-// yellow('NODE_ENV', NODE_ENV)
+// devLocal
+yellow('MONGODB_URL_DEV_LOCAL', MONGODB_URL_DEV_LOCAL,)
+yellow('DB_NAME_DEV_LOCAL', DB_NAME_DEV_LOCAL)
+// devRemote
+yellow('MONGODB_URL_DEV_REMOTE', MONGODB_URL_DEV_REMOTE)
+yellow('DB_NAME_DEV_REMOTE', DB_NAME_TEST_REMOTE)
+// testLocal
+yellow('MONGODB_URL_TEST_LOCAL', MONGODB_URL_TEST_LOCAL)
+yellow('DB_NAME_TEST_LOCAL', DB_NAME_TEST_LOCAL)
+// testLocal
+yellow('MONGODB_URL_TEST_REMOTE', MONGODB_URL_TEST_REMOTE)
+yellow('DB_NAME_TEST_REMOTE', DB_NAME_TEST_REMOTE)
+// production
+yellow('MONGODB_URL_PRODUCTION', MONGODB_URL_PRODUCTION)
+yellow('DB_NAME_PRODUCTION', DB_NAME_PRODUCTION)
+// environment
+yellow('NODE_ENV', NODE_ENV)
 
 
 /*

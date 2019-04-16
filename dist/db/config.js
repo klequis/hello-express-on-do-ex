@@ -7,8 +7,6 @@ exports.mongoUrl = exports.dbName = exports.setVars = void 0;
 
 var _logger = require("../logger");
 
-require('dotenv').config();
-
 var _process$env = process.env,
     MONGODB_URL_DEV_LOCAL = _process$env.MONGODB_URL_DEV_LOCAL,
     DB_NAME_DEV_LOCAL = _process$env.DB_NAME_DEV_LOCAL,
@@ -21,24 +19,24 @@ var _process$env = process.env,
     MONGODB_URL_PRODUCTION = _process$env.MONGODB_URL_PRODUCTION,
     DB_NAME_PRODUCTION = _process$env.DB_NAME_PRODUCTION,
     NODE_ENV = _process$env.NODE_ENV;
-(0, _logger.greenf)('NODE_ENV', NODE_ENV); // // devLocal
-// yellow('MONGODB_URL_DEV_LOCAL', MONGODB_URL_DEV_LOCAL,)
-// yellow('DB_NAME_DEV_LOCAL', DB_NAME_DEV_LOCAL)
-// // devRemote
-// yellow('MONGODB_URL_DEV_REMOTE', MONGODB_URL_DEV_REMOTE)
-// yellow('DB_NAME_DEV_REMOTE', DB_NAME_TEST_REMOTE)
-// // testLocal
-// yellow('MONGODB_URL_TEST_LOCAL', MONGODB_URL_TEST_LOCAL)
-// yellow('DB_NAME_TEST_LOCAL', DB_NAME_TEST_LOCAL)
-// // testLocal
-// yellow('MONGODB_URL_TEST_REMOTE', MONGODB_URL_TEST_REMOTE)
-// yellow('DB_NAME_TEST_REMOTE', DB_NAME_TEST_REMOTE)
-// // production
-// yellow('MONGODB_URL_PRODUCTION', MONGODB_URL_PRODUCTION)
-// yellow('DB_NAME_PRODUCTION', DB_NAME_PRODUCTION)
-// // environment
-// yellow('NODE_ENV', NODE_ENV)
+(0, _logger.greenf)('NODE_ENV', NODE_ENV); // devLocal
 
+(0, _logger.yellow)('MONGODB_URL_DEV_LOCAL', MONGODB_URL_DEV_LOCAL);
+(0, _logger.yellow)('DB_NAME_DEV_LOCAL', DB_NAME_DEV_LOCAL); // devRemote
+
+(0, _logger.yellow)('MONGODB_URL_DEV_REMOTE', MONGODB_URL_DEV_REMOTE);
+(0, _logger.yellow)('DB_NAME_DEV_REMOTE', DB_NAME_TEST_REMOTE); // testLocal
+
+(0, _logger.yellow)('MONGODB_URL_TEST_LOCAL', MONGODB_URL_TEST_LOCAL);
+(0, _logger.yellow)('DB_NAME_TEST_LOCAL', DB_NAME_TEST_LOCAL); // testLocal
+
+(0, _logger.yellow)('MONGODB_URL_TEST_REMOTE', MONGODB_URL_TEST_REMOTE);
+(0, _logger.yellow)('DB_NAME_TEST_REMOTE', DB_NAME_TEST_REMOTE); // production
+
+(0, _logger.yellow)('MONGODB_URL_PRODUCTION', MONGODB_URL_PRODUCTION);
+(0, _logger.yellow)('DB_NAME_PRODUCTION', DB_NAME_PRODUCTION); // environment
+
+(0, _logger.yellow)('NODE_ENV', NODE_ENV);
 /*
   Possible environments
 
